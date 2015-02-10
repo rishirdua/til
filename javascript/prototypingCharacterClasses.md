@@ -18,7 +18,8 @@ Continuing in using Javascript to build D&D characters I decided to use prototyp
 	this.hp = this.hd + this.mod[2] + this.dr;
 	this.spellSave = 8 + this.profBonus + this.mod[castingAbility];
 	this.spellAttack = this.profBonus + this.mod[castingAbility];
-	}``` 
+	}
+	``` 
 	
 In using a prototype over an object we gain the ability to efficiently store identical functions common to all characters without bloating objects.
 
@@ -36,7 +37,8 @@ In using a prototype over an object we gain the ability to efficiently store ide
 	add: function (paramater, input){
 		this.paramater.push(input);
 		}
-	};```
+	};
+	```
 	
 So I've added the main functionality of leveling up our character, as well the ability to add on  attributes to an inventory, weapons list, or character attributes; should the user decide to add those optional values later.
 
@@ -46,7 +48,8 @@ Running a quick check, passing in & leveling up my sorcerer, Mordai:
 	var abilities = [9, 10, 15, 12, 9, 19];
 	var Mordai = new Character("Mordai", 1, "Wizard", 6, 5);
 	Mordai.level();
-	console.log(Mordai);```
+	console.log(Mordai);
+	```
 
 I get back the same results as my hand-calculated values for ability bonuses, level, proficiency bonus, and hit points.
 ![](http://images.thoughtbot.com/TIL/mordaiLayout.jpg)
