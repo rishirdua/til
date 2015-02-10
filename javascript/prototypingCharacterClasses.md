@@ -1,6 +1,6 @@
 #Prototype Your (Character) Class#
 
-Continuing in using Javascript to build D&D characters I decided to use prototypes to build characters.
+Continuing in using Javascript to build D&D characters, I decided to use prototypes.
 
 ```javascript
 function Character (name, dr, profession, hd, castingAbility) {
@@ -46,7 +46,7 @@ Running a quick check, passing in & leveling up my sorcerer, Mordai:
 
 ```javascript
 var abilities = [9, 10, 15, 12, 9, 19];
-var Mordai = new Character("Mordai", 1, "Wizard", 6, 5);
+var Mordai = new Character("Mordai", 1, "Sorcerer", 6, 5);
 Mordai.level();
 console.log(Mordai);
 ```
