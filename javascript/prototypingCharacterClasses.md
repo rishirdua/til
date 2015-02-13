@@ -42,7 +42,7 @@ Character.prototype = {
 };
 ```
 	
-So I've added the main functionality of leveling up our character, as well the ability to add on  attributes to an inventory, weapons list, or character attributes; should the user decide to add those optional values later.
+So I've added the main functionality of leveling up our character, as well the ability to add on items to an inventory, weapons list, or character attributes; should the user decide to add those optional values later.
 
 Running a quick check, passing in & leveling up my sorcerer, Mordai:
 
@@ -54,5 +54,6 @@ console.log(Mordai);
 ```
 
 I get back the same results as my hand-calculated values for ability bonuses, level, proficiency bonus, and hit points.
+
 ![](http://images.thoughtbot.com/TIL/mordaiLayout.jpg)
 
