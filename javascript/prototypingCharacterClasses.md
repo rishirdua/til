@@ -3,11 +3,11 @@
 Continuing in [using Javascript to build D&D characters](https://github.com/thoughtbot/til/blob/master/javascript/funWithFunctions.md), I decided to use prototypes.
 
 ```javascript
-function Character (name, dr, profession, hd, castingAbility) {
+function Character (name, hpBonus, profession, hd, castingAbility) {
 	this.name = name;
 	this.profession = profession;
 	this.hd = hd;
-	this.dr = dr;
+	this.hpBonus = hpBonus;
 	this.lvl = 1;
 	this.profBonus = 2;
 	this.castingAbility = castingAbility;
@@ -25,14 +25,16 @@ In using a prototype over an object we gain the ability to efficiently store ide
 
 ```javascript
 Character.prototype = {
-	level: function (){ 
-	this.lvl++; 
-	this.hp = this.hd + this.mod[2] + ((this.lvl-1)*(((this.hd/2)+1) + this.mod[2])) + (this.dr * this.lvl); 
-	if ((this.lvl - 1) % 4 == 0 ) {
-		this.profBonus++;
-		this.spellSave = 8 + this.profBonus + this.mod[this.castingAbility];
-		this.spellAttack = this.profBonus + this.mod[this.castingAbility];
-	}
+	levelUp: function (){ 
+		this.lvl++; 
+		var conMod = this.mod[2];
+		var lvlHP = (this.lvl-1)*(((this.hd/2)+1) + conMod); 
+		this.hp = this.hd + conMod + lvlHP + (this.hpBonus * this.lvl); 
+		if ((this.lvl - 1) % 4 == 0 ) {
+			this.profBonus++;
+			this.spellSave = 8 + this.profBonus + this.mod[this.castingAbility];
+			this.spellAttack = this.profBonus + this.mod[this.castingAbility];
+		}
 },
 	add: function (paramater, input){
 		this.paramater.push(input);
@@ -47,7 +49,7 @@ Running a quick check, passing in & leveling up my sorcerer, Mordai:
 ```javascript
 var abilities = [9, 10, 15, 12, 9, 19];
 var Mordai = new Character("Mordai", 1, "Sorcerer", 6, 5);
-Mordai.level();
+Mordai.levelUp();
 console.log(Mordai);
 ```
 
