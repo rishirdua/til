@@ -1,6 +1,6 @@
 #Prototype Your (Character) Class#
 
-Continuing in using Javascript to build D&D characters, I decided to use prototypes.
+Continuing in [using Javascript to build D&D characters](https://github.com/thoughtbot/til/blob/master/javascript/funWithFunctions.md), I decided to use prototypes.
 
 ```javascript
 function Character (name, dr, profession, hd, castingAbility) {
